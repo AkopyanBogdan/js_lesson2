@@ -89,26 +89,81 @@
         //  });
          /////////////////////////////////////////////
          //struct
-         let toyota = {};
-         toyota.name = 'Toyota Camry';
-         toyota.price = 10000;
-         toyota.drive = function() {
-                 prn(this.name + ' is running');
+         // let toyota = {};
+         // toyota.name = 'Toyota Camry';
+         // toyota.price = 10000;
+         // toyota.drive = function() {
+         //         prn(this.name + ' is running');
+         // }
+         
+         // toyota.drive();
+         
+         // let ford = {
+         //         name: 'Ford Mustang',
+         //         price: 20000,
+         //         drive: function() {
+         //                prn(this.name + ' is running');
+         //         }
+         // }
+         // ford.drive();
+         
+         ////////////////////////////////////////////////
+         //Dictionary
+        //  let weekCars = {};
+        //  weekCars['Monday'] = 'Mercedes GLK';
+        //  weekCars['Tuesday'] = 'Honda Pilot';
+        //  weekCars['Wednesday'] = 'Ford Edge';
+        //  weekCars['Thursday'] = 'Jeep Cherokee';
+        //  weekCars['Friday'] = 'Volkswagen Tiguar';
+         
+        // // prn(weekCars['Tuesday']);
+        
+        // // for(let key in weekCars)
+        // // {
+        // //  prn(weekCars[key]);
+        // // }
+        
+        // let cars = [
+        //  {name: 'Toyota', price: 30000},
+        //  {name: 'Ford', price: 20000},
+        //  {name: 'Jeep', price: 10000},
+        //  {name: 'ZAZ', price: 5000}
+        //  ]
+        //  cars.forEach((el, i) => prn(i + 1 + ') ' + el.name + ' price: ' + el.price + '<br>'));
+         
+         //////////////////////////////////////////////////
+         //functions constructors
+         function Car(name, price)
+         {
+            this.name = name;
+            this.price = price;
+            this.drive = function(){
+             prn(this.name + ' is running!');
+            }
+            //return this; // not important. You can write: return this;
          }
          
-         toyota.drive();
-         
-         let ford = {
-                 name: 'Ford Mustang',
-                 price: 20000,
-                 drive: function() {
-                        prn(this.name + ' is running');
-                 }
-         }
+         let toyota = new Car('Toyota', 20000);
+         let ford = new Car('Ford', 25000);
          ford.drive();
-        //         , 
-        //         'Daewoo Lanos',
-        //         'Ferrari LaFerrari'
+         
+         ///////in new js you can use keyword CLASS
+         
+        class SuperCar 
+        {
+         constructor(name, price)
+          {
+             this.name = name;
+             this.price = price;
+             this.drive = function()
+              {
+               prn(this.name + ' is running!');
+              }
+          }
+        }
+        
+        let ferrari = new SuperCar('Ferrari', 40000);
+        ferrari.drive();
 })();
 
 
